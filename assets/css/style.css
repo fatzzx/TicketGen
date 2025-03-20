@@ -1,128 +1,128 @@
 html,
 body {
-  height: auto;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+    height: auto;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 body {
-  background-image: url("../images/background-desktop.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+    background-image: url("../images/background-desktop.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .div-principal {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 100vh;
-  padding-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding-bottom: 5rem;
 }
 
 .corBrancaDoForm {
-  color: rgb(241, 241, 241);
+    color: rgb(241, 241, 241);
 }
 
 .div-formulario {
-  width: 30%;
+    width: 30%;
 }
 
 .upload {
-  width: 100%;
-  height: 10vh;
-  border: 0.1rem dashed gray;
-  border-radius: 0.625rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: rgb(241, 241, 241);
-  font-size: 2vw;
-  transition: background-color 0.3s ease;
-  margin: 2vh 0;
+    width: 100%;
+    height: 10vh;
+    border: 0.1rem dashed gray;
+    border-radius: 0.625rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(241, 241, 241);
+    font-size: 2vw;
+    transition: background-color 0.3s ease;
+    margin: 2vh 0;
 }
 
 .upload:hover {
-  cursor: pointer;
-  background-color: rgba(255, 69, 0, 0.1);
+    cursor: pointer;
+    background-color: rgba(255, 69, 0, 0.1);
 }
 
 .upload.dragover {
-  background-color: rgba(255, 69, 0, 0.2);
+    background-color: rgba(255, 69, 0, 0.2);
 }
 
 input[type="text"] {
-  margin: 1vh 0;
-  padding: 1.25rem;
-  width: 92%;
-  border-radius: 0.3125rem;
-  border: 0.0625rem solid #ddd;
+    margin: 1vh 0;
+    padding: 1.25rem;
+    width: 92%;
+    border-radius: 0.3125rem;
+    border: 0.0625rem solid #ddd;
 }
 
 button {
-  background-color: orangered;
-  color: white;
-  padding: 1.25rem 2.5rem;
-  border: none;
-  border-radius: 0.3125rem;
-  cursor: pointer;
-  font-size: 1rem;
-  margin-top: 2vh;
-  width: 100%;
+    background-color: orangered;
+    color: white;
+    padding: 1.25rem 2.5rem;
+    border: none;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 2vh;
+    width: 100%;
 }
 
 button:hover {
-  background-color: darkorange;
+    background-color: darkorange;
 }
 
 h4 {
-  margin-bottom: 0%;
-  font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 0%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #ticket {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  color: white;
-  width: 30%;
-  margin-top: 2rem;
+    background: url("../images/pattern-ticket.svg") no-repeat center center;
+    background-size: cover;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: white;
+    width: 30%;
+    margin-top: 2rem;
 }
 
 .ticket-card {
-  background: orangered;
-  color: white;
-  padding: 1.5rem;
-  border-radius: 0.625rem;
-  margin-top: 1rem;
+    background: orangered;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 0.625rem;
+    margin-top: 1rem;
 }
 
 .ticket-body {
-  background: rgba(0, 0, 0, 0.2);
-  padding: 1rem;
-  border-radius: 0.5rem;
-  margin-top: 0.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 #ticket.mostrar {
-  display: block;
-  animation: fadeIn 0.5s ease-in-out;
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
 }
