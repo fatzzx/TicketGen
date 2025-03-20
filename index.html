@@ -1,37 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-Br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gerador de Tickets</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png" href="">
-</head>
-<body>
-  <script src="assets/script/script.js"></script>
-
-  <div class="div-principal">
-    <img src="assets/images/logo-full.svg" alt="logo do cara" style="padding-top: 3%; padding-bottom: 2%;">
-    <h1 style="color: rgb(241, 241, 241); margin-bottom: 0%; font-size: 50px;">Your Journey to Coding Conf</h1>
-    <h1 style="color: rgb(241, 241, 241); margin-top: 0%; font-size: 50px;">2025 Starts Here!</h1>
-    <p style="color: rgb(201, 196, 196); font-size: large;">Secure your spot at next year's biggest coding conference</p>
-    <div class="div-formulario">
-      <h4 class="corBrancaDoForm">Upload</h4>
-      <div class="upload" 
-           ondrop="drophandler(event)" 
-           ondragover="dragoverhandler(event)">
-            <img src="assets/images/icon-upload.svg" alt="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerador de Tickets</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png" />
+  </head>
+  <body>
+    <div class="div-principal">
+      <img
+        src="assets/images/logo-full.svg"
+        alt="logo do cara"
+        style="padding-top: 3%; padding-bottom: 2%"
+      />
+      <h1 style="color: rgb(241, 241, 241); margin-bottom: 0%; font-size: 50px">
+        Your Journey to Coding Conf
+      </h1>
+      <h1 style="color: rgb(241, 241, 241); margin-top: 0%; font-size: 50px">
+        2025 Starts Here!
+      </h1>
+      <p style="color: rgb(201, 196, 196); font-size: large">
+        Secure your spot at next year's biggest coding conference
+      </p>
+      <div class="div-formulario">
+        <h4 class="corBrancaDoForm">Upload</h4>
+        <div
+          class="upload"
+          ondrop="drophandler(event)"
+          ondragover="dragoverhandler(event)"
+        >
+          <img src="assets/images/icon-upload.svg" alt="" />
+        </div>
+        <h4 class="corBrancaDoForm">Full Name</h4>
+        <input type="text" id="nome" />
+        <h4 class="corBrancaDoForm">Email Address</h4>
+        <input type="text" id="email" />
+        <h4 class="corBrancaDoForm">GitHub Username</h4>
+        <input type="text" id="github" />
+        <br />
+        <button onclick="gerarTicket()">Generate My Ticket</button>
       </div>
-      <h4 class="corBrancaDoForm">Full Name</h4>
-      <input type="text">
-      <h4 class="corBrancaDoForm">Email Address</h4>
-      <input type="text">
-      <h4 class="corBrancaDoForm">GitHub Username</h4>
-      <input type="text">
-      <br>
-      <button>Generate My Ticket</button>
+
+      <div id="ticket" style="display: none">
+        <h2>Parabéns, <span id="ticket-nome"></span>!</h2>
+        <p>Seu ticket está pronto.</p>
+        <p>Enviamos um e-mail para <span id="ticket-email"></span>.</p>
+
+        <div class="ticket-card">
+          <h3>Coding Conf</h3>
+          <p>Jan 31, 2025 / Austin, TX</p>
+          <div class="ticket-body">
+            <p>
+              <strong>@<span id="ticket-username"></span></strong>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  
-</body>
+
+    <script src="assets/script/script.js"></script>
+  </body>
 </html>
