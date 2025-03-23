@@ -20,22 +20,14 @@ function drophandler(event) {
       };
       reader.readAsDataURL(file);
     } else {
-      uploadElement.innerHTML = `<p style="color: red;"> Apenas imagens são permitidas.</p>`;
+      uploadElement.innerHTML = `<p style="color: red;">Apenas imagens são permitidas.</p>`;
     }
   } else {
     uploadElement.innerHTML = `<p>Nenhum arquivo encontrado.</p>`;
   }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("Script carregado!");
-
-  document.querySelector("button").addEventListener("click", gerarTicket);
-});
-
 function gerarTicket() {
-  console.log("Botão clicado!");
-
   let nome = document.getElementById("nome").value.trim();
   let email = document.getElementById("email").value.trim();
   let github = document.getElementById("github").value.trim();
@@ -45,12 +37,15 @@ function gerarTicket() {
     return;
   }
 
-  console.log("Nome:", nome, "Email:", email, "GitHub:", github);
+  if (!/\S+@\S+\.\S+/.test(email)) {
+    alert("Por favor, insira um email válido!");
+    return;
+  }
 
   document.getElementById("ticket-nome").textContent = nome;
   document.getElementById("ticket-email").textContent = email;
   document.getElementById("ticket-username").textContent = github;
 
   let ticket = document.getElementById("ticket");
-  ticket.style.display = "block";
+  ticket.classList.add("mostrar");
 }

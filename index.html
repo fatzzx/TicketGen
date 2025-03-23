@@ -9,45 +9,47 @@
   </head>
   <body>
     <div class="div-principal">
-      <img
-        src="assets/images/logo-full.svg"
-        alt="logo do cara"
-        style="padding-top: 3%; padding-bottom: 2%"
-      />
-      <h1 style="color: rgb(241, 241, 241); margin-bottom: 0%; font-size: 50px">
-        Your Journey to Coding Conf
-      </h1>
-      <h1 style="color: rgb(241, 241, 241); margin-top: 0%; font-size: 50px">
-        2025 Starts Here!
-      </h1>
-      <p style="color: rgb(201, 196, 196); font-size: large">
+      <img src="assets/images/logo-full.svg" alt="logo do cara" class="logo" />
+      <h1 class="titulo">Your Journey to Coding Conf</h1>
+      <h1 class="titulo">2025 Starts Here!</h1>
+      <p class="subtitulo">
         Secure your spot at next year's biggest coding conference
       </p>
-      <div class="div-formulario">
-        <h4 class="corBrancaDoForm">Upload</h4>
+      <form
+        class="div-formulario"
+        onsubmit="event.preventDefault(); gerarTicket();"
+      >
+        <label for="upload" class="corBrancaDoForm">Upload Avatar</label>
         <div
           class="upload"
           ondrop="drophandler(event)"
           ondragover="dragoverhandler(event)"
         >
-          <img src="assets/images/icon-upload.svg" alt="" />
+          <img src="assets/images/icon-upload.svg" alt="Ícone de upload" />
+          <p>Drag and drop or click to upload</p>
         </div>
-        <h4 class="corBrancaDoForm">Full Name</h4>
-        <input type="text" id="nome" />
-        <h4 class="corBrancaDoForm">Email Address</h4>
-        <input type="text" id="email" />
-        <h4 class="corBrancaDoForm">GitHub Username</h4>
-        <input type="text" id="github" />
-        <br />
-        <button onclick="gerarTicket()">Generate My Ticket</button>
-      </div>
+        <p class="upload-info">
+          Upload your photo (JPEG, PNG, max size: 500KB).
+        </p>
+        <label for="nome" class="corBrancaDoForm">Full Name</label>
+        <input type="text" id="nome" placeholder="Your full name" />
+        <label for="email" class="corBrancaDoForm">Email Address</label>
+        <input type="email" id="email" placeholder="example@email.com" />
+        <label for="github" class="corBrancaDoForm">GitHub Username</label>
+        <input type="text" id="github" placeholder="@yourusername" />
+        <button type="submit">Generate My Ticket</button>
+      </form>
 
-      <div id="ticket" style="display: none">
+      <div id="ticket" class="ticket-escondido">
         <h2>Parabéns, <span id="ticket-nome"></span>!</h2>
         <p>Seu ticket está pronto.</p>
         <p>Enviamos um e-mail para <span id="ticket-email"></span>.</p>
         <strong>@<span id="ticket-username"></span></strong>
-      </div>
+        <button
+          onclick="document.getElementById('ticket').classList.remove('mostrar')"
+        >
+          Fechar
+        </button>
       </div>
     </div>
 
