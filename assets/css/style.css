@@ -4,6 +4,7 @@
   --cinza-claro: rgb(201, 196, 196);
   --laranja: orangered;
   --cinza-escuro: #2a2a2a;
+  --gradiente-ticket: linear-gradient(135deg, #4b3f72 0%, #1e1a3c 100%);
 }
 
 /* Reset básico e altura mínima */
@@ -57,10 +58,30 @@ body {
   margin: 1rem 0 3rem;
 }
 
-/* Formulário */
+/* Mensagem de confirmação */
+#confirmation-message {
+  text-align: center;
+}
+
+#confirmation-message .subtitulo span {
+  color: var(--laranja);
+  font-weight: bold;
+}
+
+.confirmation-escondida {
+  display: none;
+}
+
+#confirmation-message.mostrar {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Formulário e Ticket Container */
 .div-formulario {
   width: 40%;
   max-width: 600px;
+  position: relative;
 }
 
 .corBrancaDoForm {
@@ -153,38 +174,70 @@ button:hover {
 
 /* Ticket */
 #ticket {
-  background: url("../images/pattern-ticket.svg") no-repeat center center;
-  background-size: cover;
-  padding: 3rem;
+  background: var(--gradiente-ticket);
   border-radius: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   color: white;
-  width: 40%;
-  max-width: 600px;
-  margin-top: 3rem;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
 }
 
-#ticket h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.ticket-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
 }
 
-#ticket p {
-  font-size: 1.25rem;
-  margin: 0.5rem 0;
-}
-
-#ticket strong {
-  display: block;
+.ticket-header h2 {
   font-size: 1.5rem;
-  margin-top: 1rem;
+  margin: 0;
+  color: var(--laranja);
 }
 
-#ticket button {
-  margin-top: 2rem;
-  padding: 0.75rem 2rem;
+.ticket-date {
+  font-size: 0.9rem;
+  margin: 0.5rem 0 0;
+  color: var(--branco-principal);
+}
+
+.ticket-number {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
   font-size: 1rem;
+  color: var(--cinza-claro);
+  font-weight: bold;
+}
+
+.ticket-body {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+#ticket-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  object-fit: cover;
+}
+
+.ticket-info {
+  flex: 1;
+}
+
+.ticket-info h3 {
+  font-size: 1.25rem;
+  margin: 0;
+  color: var(--branco-principal);
+}
+
+.ticket-info p {
+  font-size: 1rem;
+  margin: 0.5rem 0 0;
+  color: var(--cinza-claro);
 }
 
 .ticket-escondido {
@@ -221,9 +274,8 @@ button:hover {
     font-size: 1.2rem;
   }
 
-  .div-formulario,
-  #ticket {
-    width: 90%;
+  .div-formulario {
+    width: 80%;
   }
 
   .corBrancaDoForm {
@@ -251,20 +303,29 @@ button:hover {
     font-size: 1rem;
   }
 
-  #ticket {
-    padding: 2rem;
+  #ticket-avatar {
+    width: 60px;
+    height: 60px;
   }
 
-  #ticket h2 {
-    font-size: 1.5rem;
+  .ticket-header h2 {
+    font-size: 1.25rem;
   }
 
-  #ticket p {
-    font-size: 1rem;
+  .ticket-date {
+    font-size: 0.8rem;
   }
 
-  #ticket strong {
-    font-size: 1.2rem;
+  .ticket-number {
+    font-size: 0.9rem;
+  }
+
+  .ticket-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .ticket-info p {
+    font-size: 0.9rem;
   }
 }
 
@@ -281,6 +342,10 @@ button:hover {
     font-size: 1rem;
   }
 
+  .div-formulario {
+    width: 90%;
+  }
+
   .upload {
     font-size: 0.9rem;
     height: 10vh;
@@ -288,6 +353,31 @@ button:hover {
   }
 
   .upload p {
+    font-size: 0.8rem;
+  }
+
+  #ticket-avatar {
+    width: 50px;
+    height: 50px;
+  }
+
+  .ticket-header h2 {
+    font-size: 1rem;
+  }
+
+  .ticket-date {
+    font-size: 0.7rem;
+  }
+
+  .ticket-number {
+    font-size: 0.8rem;
+  }
+
+  .ticket-info h3 {
+    font-size: 1rem;
+  }
+
+  .ticket-info p {
     font-size: 0.8rem;
   }
 }

@@ -10,46 +10,61 @@
   <body>
     <div class="div-principal">
       <img src="assets/images/logo-full.svg" alt="logo do cara" class="logo" />
-      <h1 class="titulo">Your Journey to Coding Conf</h1>
-      <h1 class="titulo">2025 Starts Here!</h1>
-      <p class="subtitulo">
-        Secure your spot at next year's biggest coding conference
-      </p>
-      <form
-        class="div-formulario"
-        onsubmit="event.preventDefault(); gerarTicket();"
-      >
-        <label for="upload" class="corBrancaDoForm">Upload Avatar</label>
-        <div
-          class="upload"
-          ondrop="drophandler(event)"
-          ondragover="dragoverhandler(event)"
-        >
-          <img src="assets/images/icon-upload.svg" alt="Ícone de upload" />
-          <p>Drag and drop or click to upload</p>
-        </div>
-        <p class="upload-info">
-          Upload your photo (JPEG, PNG, max size: 500KB).
+      <div id="header-content">
+        <h1 class="titulo">Your Journey to Coding Conf</h1>
+        <h1 class="titulo">2025 Starts Here!</h1>
+        <p class="subtitulo">
+          Secure your spot at next year's biggest coding conference
         </p>
-        <label for="nome" class="corBrancaDoForm">Full Name</label>
-        <input type="text" id="nome" placeholder="Your full name" />
-        <label for="email" class="corBrancaDoForm">Email Address</label>
-        <input type="email" id="email" placeholder="example@email.com" />
-        <label for="github" class="corBrancaDoForm">GitHub Username</label>
-        <input type="text" id="github" placeholder="@yourusername" />
-        <button type="submit">Generate My Ticket</button>
-      </form>
-
-      <div id="ticket" class="ticket-escondido">
-        <h2>Parabéns, <span id="ticket-nome"></span>!</h2>
-        <p>Seu ticket está pronto.</p>
-        <p>Enviamos um e-mail para <span id="ticket-email"></span>.</p>
-        <strong>@<span id="ticket-username"></span></strong>
-        <button
-          onclick="document.getElementById('ticket').classList.remove('mostrar')"
+      </div>
+      <div id="confirmation-message" class="confirmation-escondida">
+        <h1 class="titulo">Congrats!</h1>
+        <h1 class="titulo">Your ticket is ready.</h1>
+        <p class="subtitulo">
+          We've emailed your ticket to <span id="confirmation-email"></span> and
+          will send updates in the run up to the event.
+        </p>
+      </div>
+      <div class="div-formulario">
+        <form
+          class="formulario"
+          onsubmit="event.preventDefault(); gerarTicket();"
         >
-          Fechar
-        </button>
+          <label for="upload" class="corBrancaDoForm">Upload Avatar</label>
+          <div
+            class="upload"
+            ondrop="drophandler(event)"
+            ondragover="dragoverhandler(event)"
+          >
+            <img src="assets/images/icon-upload.svg" alt="Ícone de upload" />
+            <p>Drag and drop or click to upload</p>
+          </div>
+          <p class="upload-info">
+            Upload your photo (JPEG, PNG, max size: 500KB).
+          </p>
+          <label for="nome" class="corBrancaDoForm">Full Name</label>
+          <input type="text" id="nome" placeholder="Your full name" />
+          <label for="email" class="corBrancaDoForm">Email Address</label>
+          <input type="email" id="email" placeholder="example@email.com" />
+          <label for="github" class="corBrancaDoForm">GitHub Username</label>
+          <input type="text" id="github" placeholder="@yourusername" />
+          <button type="submit">Generate My Ticket</button>
+        </form>
+
+        <div id="ticket" class="ticket-escondido">
+          <div class="ticket-header">
+            <h2>Coding Conf</h2>
+            <p class="ticket-date">Jan 31, 2025 / Austin, TX</p>
+            <p class="ticket-number">#0169</p>
+          </div>
+          <div class="ticket-body">
+            <img id="ticket-avatar" src="" alt="Avatar do usuário" />
+            <div class="ticket-info">
+              <h3 id="ticket-nome"></h3>
+              <p>@<span id="ticket-username"></span></p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
