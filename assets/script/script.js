@@ -45,6 +45,11 @@ function gerarTicket() {
     return;
   }
 
+  if (github[0] != "@") {
+    alert("Seu usuario deve comecar com @!");
+    return;
+  }
+
   document.getElementById("ticket-nome").textContent = nome;
   document.getElementById("ticket-username").textContent = github;
   document.getElementById("ticket-avatar").src = avatarSrc;
